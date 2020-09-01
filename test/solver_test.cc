@@ -1,5 +1,6 @@
 #include "gtest/gtest.h"
 
 TEST(SolverTest, NegativeEnergy){
-    EXPECT_EQ(1,1);
+    int test = 1;
+    EXPECT_EQ(test, 1);
 }

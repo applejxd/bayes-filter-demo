@@ -10,10 +10,11 @@ namespace eom
 using std::vector;
 using std::cout;
 
-DoublePendulum::DoublePendulum (const double (&m)[2], const double (&l)[2]){
-    /**
-     * @brief set masses and lengths
-     */
+/**
+ * Set masses and lengths
+ */
+DoublePendulum::DoublePendulum (const double (&m)[2], const double (&l)[2])
+    :m{m[0], m[1]}, l{l[0], l[1]}{
     // TODO: Should it be allowed the exception for single pendulum?
     try{
         if(m[0]==0 || m[1]==0 || l[0]==0 || l[1]==0){
@@ -22,18 +23,12 @@ DoublePendulum::DoublePendulum (const double (&m)[2], const double (&l)[2]){
     }catch(char *null_param_err){
         cout << null_param_err;
     }
-    
-    *(this->m) = *m;
-    *(this->l) = *l;
 }
 
+/**
+ * Calculate velocity 'dqdt'
+ */
 vector<double> DoublePendulum::HamiltonEq(const vector<double> &x) {
-    /**
-     * @brief calculate velocity 'dqdt'
-     * @param offdiag: off-diagonal part of coefficient matrix
-     * @param det: determinant of coefficient matrix
-     * @return velocity 'dqdt'
-     */
     try{
         if(x.size() != 4){
             throw "Exception: The phase sp. dim. doesn't match.";
@@ -41,6 +36,7 @@ vector<double> DoublePendulum::HamiltonEq(const vector<double> &x) {
     }catch(char *size_err){
         cout << size_err;
     }
+
 
     vector<double> dxdt(4);
     

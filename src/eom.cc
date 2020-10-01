@@ -1,59 +1,55 @@
-#include <eom.h>
+#include "include/eom.h"
 
-#include <math.h>
-#include <vector>
+#include <cmath>
 #include <iostream>
+#include <stdexcept>
+#include <vector>
 
-namespace eom
-{
+namespace eom {
 
-using std::vector;
 using std::cout;
 
 /**
- * Set masses and lengths
+ * Set system parameters
+ * @param m Mass parameters of the double pendulum
+ * @param l Length of the double pendulum
  */
-DoublePendulum::DoublePendulum (const double (&m)[2], const double (&l)[2])
-    :m{m[0], m[1]}, l{l[0], l[1]}{
-    // TODO: Should it be allowed the exception for single pendulum?
-    try{
-        if(m[0]==0 || m[1]==0 || l[0]==0 || l[1]==0){
-            throw "Exception: Null parameter(s) exist.";
-        }
-    }catch(char *null_param_err){
-        cout << null_param_err;
-    }
+DoublePendulum::DoublePendulum(const array<double, 2> &m,
+                               const array<double, 2> &l)
+    : m(m), l(l) {
+  if (m[0] == 0 || m[1] == 0 || l[0] == 0 || l[1] == 0) {
+    throw std::runtime_error("Error: Null parameter(s) exist.");
+  }
 }
 
 /**
- * Calculate velocity 'dqdt'
+ * Hamilton equations of double pendulum
+ * @param x Phase space variables
+ * @return Renewed phase space variables
  */
-vector<double> DoublePendulum::HamiltonEq(const vector<double> &x) {
-    try{
-        if(x.size() != 4){
-            throw "Exception: The phase sp. dim. doesn't match.";
-        }
-    }catch(char *size_err){
-        cout << size_err;
-    }
+CanonVar DoublePendulum::HamiltonEq(const CanonVar &var) {
+  if (var.data.size() != 4) {
+    throw std::runtime_error("Error: The phase sp. dim. doesn't match.");
+  }
 
+  CanonVar dxdt;
 
-    vector<double> dxdt(4);
-    
-    // for dqdt
-    double offdiag = m[1]*l[0]*l[1]*cos(x[0]-x[1]);
-    double det = (m[0]+m[1])*m[1]*pow(l[0]*l[1], 2.0)-pow(offdiag, 2.0);
+  // for dqdt
+  double offdiag = m[1] * l[0] * l[1] * cos(var.theta1 - var.theta2);
+  double det = (m[0] + m[1]) * m[1] * pow(l[0] * l[1], 2.0) - pow(offdiag, 2.0);
 
-    dxdt[0] = det*(m[1]*l[1]*l[1]*x[2]-offdiag*x[3]);
-    dxdt[1] = det*(-offdiag*x[0]+(m[0]*m[1])*l[0]*l[0]*x[1]);
+  dxdt.theta1 = det * (m[1] * l[1] * l[1] * var.omega1 - offdiag * var.omega2);
+  dxdt.theta2 =
+      det * (-offdiag * var.theta1 + (m[0] * m[1]) * l[0] * l[0] * var.theta2);
 
-    // for dpdt
-    double c = m[1]*l[0]*l[1]*sin(x[0]-x[1])*dxdt[0]*dxdt[1];
+  // for dpdt
+  double c = m[1] * l[0] * l[1] * sin(var.theta1 - var.theta2) * dxdt.theta1 *
+             dxdt.theta2;
 
-    dxdt[2] = -c - (m[0]+m[1])*g*l[0]*sin(x[0]);
-    dxdt[3] = c - m[1]*g*l[1]*cos(x[1]);
+  dxdt.omega1 = -c - (m[0] + m[1]) * g * l[0] * sin(var.theta1);
+  dxdt.omega2 = c - m[1] * g * l[1] * cos(var.theta2);
 
-    return dxdt;
+  return dxdt;
 }
 
-} // namespace eom
+}  // namespace eom

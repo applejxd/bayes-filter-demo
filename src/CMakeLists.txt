@@ -4,9 +4,6 @@ add_library(Dynamics
     SHARED
         eom.cc
         ode_solver.cc
-)
-
-target_include_directories(Dynamics
-    PUBLIC
-        ${PROJECT_SOURCE_DIR}/include
+        # viewer.cc
+        runner.cc
 )

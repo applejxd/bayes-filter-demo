@@ -22,6 +22,18 @@ struct CanonVar {
       double omega2;
     };
   };
+  CanonVar(void){
+    theta1 = 0.;
+    theta2 = 0.;
+    omega1 = 0.;
+    omega2 = 0.;
+  }
+  CanonVar(double a, double b, double c, double d) {
+    theta1 = a;
+    theta2 = b;
+    omega1 = c;
+    omega2 = d;
+  }
 };
 
 /** Error of the state */

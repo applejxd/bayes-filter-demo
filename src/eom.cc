@@ -1,3 +1,4 @@
+// Copyright 2020 @applejxd
 #include "include/eom.h"
 
 #include <cmath>

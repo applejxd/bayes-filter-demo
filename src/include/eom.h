@@ -40,7 +40,7 @@ class DoublePendulum : public EomBase {
 
  private:
   /** Gravitational accelaration constant */
-  constexpr static double g = 9.8;
+  constexpr static double g{9.8};
   /** Masses of the double pendulum */
   const array<double, 2> m;
   /** Lengthes of the double pendulum */

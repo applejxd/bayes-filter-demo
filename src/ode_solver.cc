@@ -1,24 +1,30 @@
+// Copyright 2020 @applejxd
 #include "./include/ode_solver.h"
 
 #include <array>
+#include <cmath>
 
 namespace odesolver {
 
 using std::array;
 
-OdeSolverBase::OdeSolverBase(eom::EomBase* eom, double dt)
-    : eom_ins(eom), dt(dt) {}
+OdeSolverBase::OdeSolverBase(eom::EomBase* eom, double dt, double t_end)
+    : eom_ins{eom}, dt{dt}, times{static_cast<int>(std::floor(t_end / dt))} {}
 
-eom::EomBase* OdeSolverBase::GetEom(void) { return this->eom_ins; }
-
-double OdeSolverBase::GetDt(void) { return this->dt; }
+void RK4::SolveOde(const CanonVar& var) {
+  CanonVar ans = var;
+  for (int i = 0; i < this->GetTimes(); i++) {
+    this->PushAnsBack(ans);
+    ans = this->Renew(ans);
+  }
+}
 
 /**
  * The 4th-order Runge-Kutta method
  * @param var Variables in current step
  * @return Variables in next step
  */
-CanonVar RK4::SolveOde(const CanonVar& var) {
+CanonVar RK4::Renew(const CanonVar& var) {
   array<CanonVar, 4> k;
   CanonVar var_shift;
 
@@ -41,9 +47,9 @@ CanonVar RK4::SolveOde(const CanonVar& var) {
 
   CanonVar var_next;
   for (int i = 0; i < var.data.size(); i++) {
-    var_next.data[i] = var.data[i] + (k[0].data[i] + 2 * k[1].data[i] +
-                                      2 * k[2].data[i] + k[3].data[i]) /
-                                         6.0 * this->GetDt();
+    double tmp =
+        k[0].data[i] + 2 * k[1].data[i] + 2 * k[2].data[i] + k[3].data[i];
+    var_next.data[i] = var.data[i] + tmp / 6.0 * this->GetDt();
   }
 
   return var_next;

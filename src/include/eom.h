@@ -16,9 +16,7 @@ using std::array;
 using std::vector;
 using types::CanonVar;
 
-/**
- * Abstract class for Equations of Motion
- */
+/** Abstract class for Equations of Motion */
 class EomBase {
  public:
   /** Hamilton equations */
@@ -27,16 +25,16 @@ class EomBase {
   inline const CanonVar& GetState() const { return this->var; }
 
  private:
+  /** Canonical variables */
   CanonVar var;
 };
 
-/**
- * Class for equations of motion of double pendulum
- */
+/** Class for equations of motion of double pendulum */
 class DoublePendulum : public EomBase {
  public:
   DoublePendulum(const array<double, 2>& m, const array<double, 2>& l);
   CanonVar HamiltonEq(const CanonVar& x);
+  inline array<double, 2> GetLength() const { return this->l; }
 
  private:
   /** Gravitational accelaration constant */

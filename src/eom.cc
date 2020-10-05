@@ -37,7 +37,7 @@ CanonVar DoublePendulum::HamiltonEq(const CanonVar &var) {
 
   // for dqdt
   double offdiag = m[1] * l[0] * l[1] * cos(var.theta1 - var.theta2);
-  double det = (m[0] + m[1]) * m[1] * pow(l[0] * l[1], 2.) - pow(offdiag, 2.);
+  double det = (m[0] + m[1]) * m[1] * pow(l[0] * l[1], 2) - pow(offdiag, 2.);
 
   dxdt.theta1 = (m[1] * l[1] * l[1] * var.omega1 - offdiag * var.omega2) / det;
   dxdt.theta2 =
@@ -48,7 +48,7 @@ CanonVar DoublePendulum::HamiltonEq(const CanonVar &var) {
              dxdt.theta2;
 
   dxdt.omega1 = -c - (m[0] + m[1]) * g * l[0] * sin(var.theta1);
-  dxdt.omega2 = c - m[1] * g * l[1] * cos(var.theta2);
+  dxdt.omega2 = c - m[1] * g * l[1] * sin(var.theta2);
 
   return dxdt;
 }

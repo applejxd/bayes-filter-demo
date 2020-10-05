@@ -22,12 +22,14 @@ struct CanonVar {
       double omega2;
     };
   };
-  CanonVar(void){
+  /** Set canonical variables to null */
+  CanonVar(void) {
     theta1 = 0.;
     theta2 = 0.;
     omega1 = 0.;
     omega2 = 0.;
   }
+  /** Initialize canonical variables */
   CanonVar(double a, double b, double c, double d) {
     theta1 = a;
     theta2 = b;

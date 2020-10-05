@@ -4,6 +4,6 @@ add_library(Dynamics
     SHARED
         eom.cc
         ode_solver.cc
-        # viewer.cc
+        viewer.cc
         runner.cc
 )

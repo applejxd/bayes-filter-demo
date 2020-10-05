@@ -11,12 +11,21 @@ using std::array;
 OdeSolverBase::OdeSolverBase(eom::EomBase* eom, double dt, double t_end)
     : eom_ins{eom}, dt{dt}, times{static_cast<int>(std::floor(t_end / dt))} {}
 
-void RK4::SolveOde(const CanonVar& var) {
+void ExplicitSolver::SolveOde(const CanonVar& var) {
   CanonVar ans = var;
   for (int i = 0; i < this->GetTimes(); i++) {
     this->PushAnsBack(ans);
     ans = this->Renew(ans);
   }
+}
+
+CanonVar Euler::Renew(const CanonVar& var) {
+  CanonVar var_next;
+  CanonVar dxdt = this->GetEom()->HamiltonEq(var);
+  for (int i = 0; i < var.data.size(); i++) {
+    var_next.data[i] = var.data[i] + dxdt.data[i] * this->GetDt();
+  }
+  return var_next;
 }
 
 /**

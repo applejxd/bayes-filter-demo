@@ -6,5 +6,5 @@
 
 int main(int, char**) {
   runner::Runner runner_ins;
-  runner_ins.RunPrinter();
+  runner_ins.RunViewer();
 }

@@ -22,7 +22,9 @@ class Viewer {
  public:
   Viewer();
   inline void Clear() { this->canvas = Scalar::all(0); }
+  // 未使用
   void DrawCross(const Point&, const Scalar&, double);
+  void DrawCircle(const Point&, const Scalar&, double);
   void DrawLine(const Point&, const Point&, const Scalar&, double);
   void DrawPendulum(const CanonVar&, const array<double, 2>&);
 

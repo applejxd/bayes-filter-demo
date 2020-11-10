@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: odesolver::ExplicitSolver クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><b>odesolver</b></li><li class="navelem"><a class="el" href="classodesolver_1_1ExplicitSolver.html">ExplicitSolver</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="classodesolver_1_1ExplicitSolver-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">odesolver::ExplicitSolver クラス<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="ode__solver_8h_source.html">ode_solver.h</a>&gt;</code></p>
+<div class="dynheader">
+odesolver::ExplicitSolver の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><img src="classodesolver_1_1ExplicitSolver__inherit__graph.png" border="0" usemap="#odesolver_1_1ExplicitSolver_inherit__map" alt="Inheritance graph"/></div>
+<map name="odesolver_1_1ExplicitSolver_inherit__map" id="odesolver_1_1ExplicitSolver_inherit__map">
+<area shape="rect" id="node3" href="classodesolver_1_1Euler.html" title="odesolver::Euler" alt="" coords="5,155,121,181"/>
+<area shape="rect" id="node4" href="classodesolver_1_1RK4.html" title="odesolver::RK4" alt="" coords="146,155,258,181"/>
+<area shape="rect" id="node2" href="classodesolver_1_1OdeSolverBase.html" title="odesolver::OdeSolverBase" alt="" coords="44,5,221,32"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">凡例</a>]</span></center></div>
+<div class="dynheader">
+odesolver::ExplicitSolver 連携図</div>
+<div class="dyncontent">
+<div class="center"><img src="classodesolver_1_1ExplicitSolver__coll__graph.png" border="0" usemap="#odesolver_1_1ExplicitSolver_coll__map" alt="Collaboration graph"/></div>
+<map name="odesolver_1_1ExplicitSolver_coll__map" id="odesolver_1_1ExplicitSolver_coll__map">
+<area shape="rect" id="node2" href="classodesolver_1_1OdeSolverBase.html" title="odesolver::OdeSolverBase" alt="" coords="62,184,239,211"/>
+<area shape="rect" id="node3" href="classeom_1_1EomBase.html" title="eom::EomBase" alt="" coords="9,95,121,121"/>
+<area shape="rect" id="node4" href="structtypes_1_1CanonVar.html" title="types::CanonVar" alt="" coords="5,5,125,32"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">凡例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:aaab24e3e939f7ac537ecddd8f690cf06"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classodesolver_1_1ExplicitSolver.html#aaab24e3e939f7ac537ecddd8f690cf06">SolveOde</a> (const <a class="el" href="structtypes_1_1CanonVar.html">CanonVar</a> &amp;var)</td></tr>
+<tr class="separator:aaab24e3e939f7ac537ecddd8f690cf06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5916e2017f0606f2d3bc391c0e2ff28"><td class="memItemLeft" align="right" valign="top"><a id="ae5916e2017f0606f2d3bc391c0e2ff28"></a>
+virtual <a class="el" href="structtypes_1_1CanonVar.html">CanonVar</a>&#160;</td><td class="memItemRight" valign="bottom"><b>Renew</b> (const <a class="el" href="structtypes_1_1CanonVar.html">CanonVar</a> &amp;var)=0</td></tr>
+<tr class="separator:ae5916e2017f0606f2d3bc391c0e2ff28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classodesolver_1_1OdeSolverBase"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classodesolver_1_1OdeSolverBase')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="classodesolver_1_1OdeSolverBase.html">odesolver::OdeSolverBase</a> に属する継承公開メンバ関数</td></tr>
+<tr class="memitem:a7f45351d23764cbf1deabca032d8af36 inherit pub_methods_classodesolver_1_1OdeSolverBase"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classodesolver_1_1OdeSolverBase.html#a7f45351d23764cbf1deabca032d8af36">OdeSolverBase</a> (<a class="el" href="classeom_1_1EomBase.html">eom::EomBase</a> *eom, double <a class="el" href="classodesolver_1_1OdeSolverBase.html#a9c60ad567caa36b9ccaca44438c11824">dt</a>, double t_end)</td></tr>
+<tr class="separator:a7f45351d23764cbf1deabca032d8af36 inherit pub_methods_classodesolver_1_1OdeSolverBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8255feee6b08391555fc0b3933bfd57 inherit pub_methods_classodesolver_1_1OdeSolverBase"><td class="memItemLeft" align="right" valign="top"><a id="ad8255feee6b08391555fc0b3933bfd57"></a>
+const double&#160;</td><td class="memItemRight" valign="bottom"><b>GetDt</b> (void) const</td></tr>
+<tr class="separator:ad8255feee6b08391555fc0b3933bfd57 inherit pub_methods_classodesolver_1_1OdeSolverBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad15798942f9c23e3d1481e9d0a833cf6 inherit pub_methods_classodesolver_1_1OdeSolverBase"><td class="memItemLeft" align="right" valign="top"><a id="ad15798942f9c23e3d1481e9d0a833cf6"></a>
+const int&#160;</td><td class="memItemRight" valign="bottom"><b>GetTimes</b> (void) const</td></tr>
+<tr class="separator:ad15798942f9c23e3d1481e9d0a833cf6 inherit pub_methods_classodesolver_1_1OdeSolverBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acadf18e67d96c8d761f59ebc14b9adcd inherit pub_methods_classodesolver_1_1OdeSolverBase"><td class="memItemLeft" align="right" valign="top"><a id="acadf18e67d96c8d761f59ebc14b9adcd"></a>
+<a class="el" href="classeom_1_1EomBase.html">eom::EomBase</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>GetEom</b> (void) const</td></tr>
+<tr class="separator:acadf18e67d96c8d761f59ebc14b9adcd inherit pub_methods_classodesolver_1_1OdeSolverBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63a8c11aa5204d6e44ae1446de50859f inherit pub_methods_classodesolver_1_1OdeSolverBase"><td class="memItemLeft" align="right" valign="top"><a id="a63a8c11aa5204d6e44ae1446de50859f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>PushAnsBack</b> (const <a class="el" href="structtypes_1_1CanonVar.html">CanonVar</a> &amp;var)</td></tr>
+<tr class="separator:a63a8c11aa5204d6e44ae1446de50859f inherit pub_methods_classodesolver_1_1OdeSolverBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fc66985e013c04d89059da3772620c6 inherit pub_methods_classodesolver_1_1OdeSolverBase"><td class="memItemLeft" align="right" valign="top">const vector&lt; <a class="el" href="structtypes_1_1CanonVar.html">CanonVar</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classodesolver_1_1OdeSolverBase.html#a8fc66985e013c04d89059da3772620c6">GetAnswer</a> (void) const</td></tr>
+<tr class="separator:a8fc66985e013c04d89059da3772620c6 inherit pub_methods_classodesolver_1_1OdeSolverBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>Solve ODE by the Runge-Kutta method (4th order) </p>
+</div><h2 class="groupheader">関数詳解</h2>
+<a id="aaab24e3e939f7ac537ecddd8f690cf06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaab24e3e939f7ac537ecddd8f690cf06">&#9670;&nbsp;</a></span>SolveOde()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void odesolver::ExplicitSolver::SolveOde </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structtypes_1_1CanonVar.html">CanonVar</a> &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Solve ODE </p>
+
+<p><a class="el" href="classodesolver_1_1OdeSolverBase.html#a24cd90c6eb958680d7b63f197b141090">odesolver::OdeSolverBase</a>を実装しています。</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li>src/include/<a class="el" href="ode__solver_8h_source.html">ode_solver.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

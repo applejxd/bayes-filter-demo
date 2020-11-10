@@ -24,7 +24,7 @@ class Runner {
 
  private:
   /** Masses of the double pendulum */
-  const array<double, 2> m{1., 2.};
+  const array<double, 2> m{2., 1.};
   /** Lengthes of the double pendulum */
   const array<double, 2> l{1., 1.};
   /** time step */

@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: src/include/runner.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_b0856f6b0d80ccb263b2f415c91f9e17.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">runner.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="runner_8h.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#ifndef SRC_INCLUDE_RUNNER_H_</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#define SRC_INCLUDE_RUNNER_H_</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;array&gt;</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="eom_8h.html">./eom.h</a>&quot;</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ode__solver_8h.html">./ode_solver.h</a>&quot;</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="viewer_8h.html">./viewer.h</a>&quot;</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacerunner.html">runner</a> {</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">using</span> std::array;</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div><div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classrunner_1_1Runner.html">   19</a></span>&#160;<span class="keyword">class </span><a class="code" href="classrunner_1_1Runner.html">Runner</a> {</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; <span class="keyword">public</span>:</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <a class="code" href="classrunner_1_1Runner.html">Runner</a>(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="keywordtype">void</span> RunPrinter();</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keywordtype">void</span> RunViewer();</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; <span class="keyword">private</span>:</div><div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classrunner_1_1Runner.html#aec5a12d505b8203245f0376bc08a3df5">   27</a></span>&#160;  <span class="keyword">const</span> array&lt;double, 2&gt; <a class="code" href="classrunner_1_1Runner.html#aec5a12d505b8203245f0376bc08a3df5">m</a>{2., 1.};</div><div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classrunner_1_1Runner.html#a9098058d684a3dbbeb2768bdf3e4f545">   29</a></span>&#160;  <span class="keyword">const</span> array&lt;double, 2&gt; <a class="code" href="classrunner_1_1Runner.html#a9098058d684a3dbbeb2768bdf3e4f545">l</a>{1., 1.};</div><div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classrunner_1_1Runner.html#a2f9c641bc6d9ce0c4653566aed3f8c14">   31</a></span>&#160;  <span class="keywordtype">double</span> <a class="code" href="classrunner_1_1Runner.html#a2f9c641bc6d9ce0c4653566aed3f8c14">dt</a>{1./100.};</div><div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classrunner_1_1Runner.html#a2ff7abc3675b7dbb028b43cff6f35b6e">   33</a></span>&#160;  <span class="keywordtype">double</span> <a class="code" href="classrunner_1_1Runner.html#a2ff7abc3675b7dbb028b43cff6f35b6e">t_end</a>{100.};</div><div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classrunner_1_1Runner.html#ad73e87369269af1ea599eb249559811e">   35</a></span>&#160;  <a class="code" href="classeom_1_1EomBase.html">eom::EomBase</a>* <a class="code" href="classrunner_1_1Runner.html#ad73e87369269af1ea599eb249559811e">eom_ins_ptr</a>;</div><div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classrunner_1_1Runner.html#a40df03554099011158edc055d638e3ec">   37</a></span>&#160;  <a class="code" href="classodesolver_1_1OdeSolverBase.html">odesolver::OdeSolverBase</a>* <a class="code" href="classrunner_1_1Runner.html#a40df03554099011158edc055d638e3ec">solver_ins_ptr</a>;</div><div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classrunner_1_1Runner.html#a45c5bf7441d09cc53ce6af737dbcdcfb">   39</a></span>&#160;  <a class="code" href="classviewer_1_1Viewer.html">viewer::Viewer</a> <a class="code" href="classrunner_1_1Runner.html#a45c5bf7441d09cc53ce6af737dbcdcfb">viewer_ins</a>;</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;};</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}  <span class="comment">// namespace runner</span></div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#endif  // SRC_INCLUDE_RUNNER_H_</span></div><div class="ttc" id="viewer_8h_html"><div class="ttname"><a href="viewer_8h.html">viewer.h</a></div></div>
+<div class="ttc" id="classrunner_1_1Runner_html_aec5a12d505b8203245f0376bc08a3df5"><div class="ttname"><a href="classrunner_1_1Runner.html#aec5a12d505b8203245f0376bc08a3df5">runner::Runner::m</a></div><div class="ttdeci">const array&lt; double, 2 &gt; m</div><div class="ttdef"><b>Definition:</b> runner.h:27</div></div>
+<div class="ttc" id="classrunner_1_1Runner_html"><div class="ttname"><a href="classrunner_1_1Runner.html">runner::Runner</a></div><div class="ttdef"><b>Definition:</b> runner.h:19</div></div>
+<div class="ttc" id="classeom_1_1EomBase_html"><div class="ttname"><a href="classeom_1_1EomBase.html">eom::EomBase</a></div><div class="ttdef"><b>Definition:</b> eom.h:20</div></div>
+<div class="ttc" id="classodesolver_1_1OdeSolverBase_html"><div class="ttname"><a href="classodesolver_1_1OdeSolverBase.html">odesolver::OdeSolverBase</a></div><div class="ttdef"><b>Definition:</b> ode_solver.h:20</div></div>
+<div class="ttc" id="classrunner_1_1Runner_html_a45c5bf7441d09cc53ce6af737dbcdcfb"><div class="ttname"><a href="classrunner_1_1Runner.html#a45c5bf7441d09cc53ce6af737dbcdcfb">runner::Runner::viewer_ins</a></div><div class="ttdeci">viewer::Viewer viewer_ins</div><div class="ttdef"><b>Definition:</b> runner.h:39</div></div>
+<div class="ttc" id="classrunner_1_1Runner_html_a2f9c641bc6d9ce0c4653566aed3f8c14"><div class="ttname"><a href="classrunner_1_1Runner.html#a2f9c641bc6d9ce0c4653566aed3f8c14">runner::Runner::dt</a></div><div class="ttdeci">double dt</div><div class="ttdef"><b>Definition:</b> runner.h:31</div></div>
+<div class="ttc" id="classviewer_1_1Viewer_html"><div class="ttname"><a href="classviewer_1_1Viewer.html">viewer::Viewer</a></div><div class="ttdef"><b>Definition:</b> viewer.h:21</div></div>
+<div class="ttc" id="classrunner_1_1Runner_html_a2ff7abc3675b7dbb028b43cff6f35b6e"><div class="ttname"><a href="classrunner_1_1Runner.html#a2ff7abc3675b7dbb028b43cff6f35b6e">runner::Runner::t_end</a></div><div class="ttdeci">double t_end</div><div class="ttdef"><b>Definition:</b> runner.h:33</div></div>
+<div class="ttc" id="classrunner_1_1Runner_html_a9098058d684a3dbbeb2768bdf3e4f545"><div class="ttname"><a href="classrunner_1_1Runner.html#a9098058d684a3dbbeb2768bdf3e4f545">runner::Runner::l</a></div><div class="ttdeci">const array&lt; double, 2 &gt; l</div><div class="ttdef"><b>Definition:</b> runner.h:29</div></div>
+<div class="ttc" id="classrunner_1_1Runner_html_ad73e87369269af1ea599eb249559811e"><div class="ttname"><a href="classrunner_1_1Runner.html#ad73e87369269af1ea599eb249559811e">runner::Runner::eom_ins_ptr</a></div><div class="ttdeci">eom::EomBase * eom_ins_ptr</div><div class="ttdef"><b>Definition:</b> runner.h:35</div></div>
+<div class="ttc" id="classrunner_1_1Runner_html_a40df03554099011158edc055d638e3ec"><div class="ttname"><a href="classrunner_1_1Runner.html#a40df03554099011158edc055d638e3ec">runner::Runner::solver_ins_ptr</a></div><div class="ttdeci">odesolver::OdeSolverBase * solver_ins_ptr</div><div class="ttdef"><b>Definition:</b> runner.h:37</div></div>
+<div class="ttc" id="namespacerunner_html"><div class="ttname"><a href="namespacerunner.html">runner</a></div><div class="ttdef"><b>Definition:</b> runner.h:14</div></div>
+<div class="ttc" id="ode__solver_8h_html"><div class="ttname"><a href="ode__solver_8h.html">ode_solver.h</a></div></div>
+<div class="ttc" id="eom_8h_html"><div class="ttname"><a href="eom_8h.html">eom.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

@@ -21,6 +21,15 @@ void Viewer::DrawCross(const Point& center, const Scalar& color, double d) {
            Point(center.x - d, center.y + d), color, 1, cv::LINE_AA, 0);
 }
 
+/** Draw a point by a small cross mark
+ * @param center Position of the poin
+ * @param color Color of the cross mark
+ * @param d Size of cross mark
+ */
+void Viewer::DrawCircle(const Point& center, const Scalar& color, double d) {
+  cv::circle(this->canvas, center, d, color, -1);
+}
+
 /** Draw a line.
  * @param start_pt Start point of the line
  * @param end_pt End point of the line
@@ -49,11 +58,12 @@ void Viewer::DrawPendulum(const CanonVar& var, const array<double, 2>& length) {
 
   this->Clear();
 
-  this->DrawCross(weight1, Scalar(0, 255, 0), 3);
-  this->DrawCross(weight2, Scalar(0, 0, 255), 3);
+  this->DrawLine(origin, weight1, Scalar(255, 255, 255), 2);
+  this->DrawLine(weight1, weight2, Scalar(255, 255, 255), 2);
 
-  this->DrawLine(origin, weight1, Scalar(255, 255, 255), 3);
-  this->DrawLine(weight1, weight2, Scalar(255, 255, 255), 3);
+  this->DrawCircle(weight1, Scalar(0, 255, 0), 5);
+  this->DrawCircle(weight2, Scalar(0, 0, 255), 5);
+
 
   cv::imshow("pendulum", this->canvas);
 }
